@@ -65,6 +65,8 @@ export default {
 .bodybox {
   height: 100%;
   padding-top: 50px;
+  width: 1300px;
+  margin: auto;
 }
 .icon {
   width: 1em;

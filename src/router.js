@@ -45,17 +45,17 @@ export default new Router({
         {
           path: "/",
           name: "quillEditorA",
-          component: () => import("./views/quillEditorA.vue")
+          component: () => import("./components/quillcom/quillEditorA.vue")
         },
         {
           path: "/quillEditor/quillEditorA",
           name: "quillEditorA",
-          component: () => import("./views/quillEditorA.vue")
+          component: () => import("./components/quillcom/quillEditorA.vue")
         },
         {
           path: "/quillEditor/quillEditorB",
           name: "quillEditorB",
-          component: () => import("./views/quillEditorB.vue")
+          component: () => import("./components/quillcom/quillEditorB.vue")
         }
       ]
     },
