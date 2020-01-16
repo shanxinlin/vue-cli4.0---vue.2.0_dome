@@ -92,7 +92,24 @@ export default new Router({
     {
       path: "/axios",
       name: "axios",
-      component: () => import("./views/axios.vue")
+      component: () => import("./views/axios.vue"),
+      children:[
+        {
+          path: "/",
+          name: "axiosA",
+          component: () => import("./components/axioscom/axiosA.vue")
+        },
+        {
+          path: "/axios/axiosA",
+          name: "axiosA",
+          component: () => import("./components/axioscom/axiosA.vue")
+        },
+        {
+          path: "/axios/axiosB",
+          name: "axiosB",
+          component: () => import("./components/axioscom/axiosB.vue")
+        }
+      ]
     },
     {
       path: "/amap",

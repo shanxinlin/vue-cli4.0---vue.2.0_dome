@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store/index'
 import axiosApi from "@/request/http.js" //注册全局api事件
+import vuePlugin from "@/assets/js/vuePlugin.js" //全局公用方法
 import './plugins/element.js'  //饿了么框架
 import './plugins/iview.js'    //iview框架
 import './plugins/swiper.js'   //swiper插件
@@ -29,6 +30,7 @@ Vue.use(VTrack, {
 })
 
 Vue.use(axiosApi)
+Vue.use(vuePlugin)
 
 Vue.config.productionTip = false
 

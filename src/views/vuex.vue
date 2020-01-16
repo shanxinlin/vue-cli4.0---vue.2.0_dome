@@ -32,15 +32,15 @@ export default {
     // ...mapGetters('age', ['getStateCount'])
   },
   mounted() {
-    //非模块改变获取state值
+    //模块改变获取state值
     this.loginStatus("2");
     console.log(this.$store.state.user.userInfo);
-    //模块改变获取state值
+    //非模块改变获取state值
     this.$store.commit("selfFn", true);
-	console.log(this.$store.state.self);
-	//异步模块改变获取state值
-	this.$store.dispatch("acFn", false);
-	console.log(this.$store.state.self);
+    console.log(this.$store.state.self);
+    //异步非模块改变获取state值
+    this.$store.dispatch("acFn", false);
+    console.log(this.$store.state.self);
   },
   methods: {
     ...mapMutations("age", ["add", "reduction"]),

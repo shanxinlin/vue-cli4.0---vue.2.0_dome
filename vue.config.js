@@ -19,11 +19,11 @@ module.exports = {
     https: false, //是否使用https协议
     hotOnly: true, //是否开启热更新
     proxy: {
-      "/toutiao": {
+      "/api": {
         target: "http://v.juhe.cn", //API服务器的地址
         changeOrigin: true,
         pathRewrite: {
-          "^/toutiao": "/toutiao"
+          "^/api": ""
         }
       }
     }
