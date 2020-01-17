@@ -25,7 +25,7 @@
           </div>
         </vue-scroll>
       </div>
-      <div class="content">
+      <div class="contentR">
         <router-view></router-view>
       </div>
     </div>
@@ -89,7 +89,7 @@ export default {
     line-height: 26px;
   }
 }
-.content {
+.contentR {
   margin: 0px 0 0 240px;
   height: 100%;
   overflow: scroll;

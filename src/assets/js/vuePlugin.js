@@ -10,41 +10,18 @@ export default {
     };
 
     //获取滚动条当前的位置
-    Vue.prototype.getScrollTop = () => {
-      var scrollTop = 0;
-      if (document.documentElement && document.documentElement.scrollTop) {
-        scrollTop = document.documentElement.scrollTop;
-      } else if (document.body) {
-        scrollTop = document.body.scrollTop;
-      }
-      return Math.floor(scrollTop);
+    Vue.prototype.getScrollTop = (scrollH = document.documentElement) => {
+      return scrollH.scrollTop || 0;
     };
 
     //获取当前可视范围的高度
-    Vue.prototype.getClientHeight = () => {
-      var clientHeight = 0;
-      if (document.body.clientHeight && document.documentElement.clientHeight) {
-        clientHeight = Math.min(
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      } else {
-        clientHeight = Math.max(
-          document.body.clientHeight,
-          document.documentElement.clientHeight
-        );
-      }
-      return Math.floor(clientHeight);
+    Vue.prototype.getInnerHeight = (windowH = document.body) => {
+      return windowH.clientHeight || 0;
     };
 
     //获取文档完整的高度
-    Vue.prototype.getScrollHeight = () => {
-      return Math.floor(
-        Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight
-        )
-      );
+    Vue.prototype.getOffsetHeight = (offsetH = document.body) => {
+      return offsetH.scrollHeight || 0;
     };
 
     //数字转百分比保留n小数
