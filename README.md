@@ -9,7 +9,7 @@
 >>request (接口封装)  
 >>store (vuex状态存储)  
 >>theme (element主题样式更换)  
-# 一、安装
+#### 一、安装
 执行cmd命令 ```yarn```
 </br>
 运行命令  ```yarn serve```
