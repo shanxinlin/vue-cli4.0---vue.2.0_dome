@@ -24,7 +24,7 @@ export default {
   },
   created() {
     this.$store.state.user.name = "oo";
-    console.log(this.$store.state.user);
+    console.log(this.$store.state.user.name);
   },
   computed: {
     ...mapState("age", ["name", "age", "num"]),

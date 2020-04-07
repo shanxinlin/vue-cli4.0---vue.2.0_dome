@@ -21,7 +21,7 @@ module.exports = {
     proxy: {
       "/api": {
         target: "http://v.juhe.cn", //API服务器的地址
-        changeOrigin: true,
+        changeOrigin: true,  //是否跨域
         pathRewrite: {
           "^/api": ""
         }
@@ -54,7 +54,7 @@ module.exports = {
 //         ws: true, // 是否启用websockets
 //         secure: false, // 使用的是http协议则设置为false，https协议则设置为true
 //         pathRewrite: {
-//           "^/toutiao": ""
+//           "^/toutiao": "/toutiao"
 //         }
 //       }
 //     }
