@@ -32,7 +32,7 @@ export default {
       });
   },
   mounted() {
-    // this.fnAll();     // async、await 与 Promise 同步的使用方法
+    this.fnAll();     // async、await 与 Promise 同步的使用方法
   },
   methods: {
     async fnAll() {
@@ -45,9 +45,9 @@ export default {
     },
     fn0() {
       return new Promise(() => {
+        // console.log(0);
         throw new Error("rejected");
       }).catch(() => {
-        console.log("fn0错误");
         return "fn0错误";
       });
     },

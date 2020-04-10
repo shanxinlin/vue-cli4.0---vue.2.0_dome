@@ -14,6 +14,7 @@
   </div>
 </template>
 <script>
+import API from "@/request/ports/ports.js"
 export default {
   name: "axios",
   data() {
@@ -43,7 +44,7 @@ export default {
   methods: {
     onLoad() {
       this.isLoading = true;
-      this.getAxios("/api/weixin/query", this.obj).then(res => {
+      this.getAxios(API.sign.weixin, this.obj).then(res => {
         if (res.data.error_code == 0) {
           if (res.data.result.list && res.data.result.list.length > 0) {
             this.list = res.data.result.list.concat(this.list)

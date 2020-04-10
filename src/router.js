@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
@@ -9,33 +8,32 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: () => import("./views/Home.vue"),
     },
     {
       path: "/about",
       name: "about",
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () => import("./views/About.vue"),
     },
     {
       path: "/vuex",
       name: "vuex",
-      component: () => import("./views/vuex.vue")
+      component: () => import("./views/vuex.vue"),
     },
     {
       path: "/Echart",
       name: "Echart",
-      component: () => import("./views/Echart.vue")
+      component: () => import("./views/Echart.vue"),
     },
     {
       path: "/waterfall",
       name: "waterfall",
-      component: () => import("./views/waterfall.vue")
+      component: () => import("./views/waterfall.vue"),
     },
     {
       path: "/video",
       name: "video",
-      component: () => import("./views/video.vue")
+      component: () => import("./views/video.vue"),
     },
     {
       path: "/quillEditor",
@@ -45,76 +43,76 @@ export default new Router({
         {
           path: "/",
           name: "quillEditorA",
-          component: () => import("./components/quillcom/quillEditorA.vue")
+          component: () => import("./components/quillcom/quillEditorA.vue"),
         },
         {
           path: "/quillEditor/quillEditorA",
           name: "quillEditorA",
-          component: () => import("./components/quillcom/quillEditorA.vue")
+          component: () => import("./components/quillcom/quillEditorA.vue"),
         },
         {
           path: "/quillEditor/quillEditorB",
           name: "quillEditorB",
-          component: () => import("./components/quillcom/quillEditorB.vue")
-        }
-      ]
+          component: () => import("./components/quillcom/quillEditorB.vue"),
+        },
+      ],
     },
     {
       path: "/upFile",
       name: "upFile",
-      component: () => import("./views/upFile.vue")
+      component: () => import("./views/upFile.vue"),
     },
     {
       path: "/MaiTrack",
       name: "MaiTrack",
-      component: () => import("./views/MaiTrack.vue")
+      component: () => import("./views/MaiTrack.vue"),
     },
     {
       path: "/Promise",
       name: "Promise",
-      component: () => import("./views/Promise.vue")
+      component: () => import("./views/Promise.vue"),
     },
     {
       path: "/share",
       name: "share",
-      component: () => import("./views/share.vue")
+      component: () => import("./views/share.vue"),
     },
     {
       path: "/regExp",
       name: "regExp",
-      component: () => import("./views/regExp.vue")
+      component: () => import("./views/regExp.vue"),
     },
     {
       path: "/Animate",
       name: "Animate",
-      component: () => import("./views/Animate.vue")
+      component: () => import("./views/Animate.vue"),
     },
     {
       path: "/axios",
       name: "axios",
       component: () => import("./views/axios.vue"),
-      children:[
+      children: [
         {
           path: "/",
           name: "axiosA",
-          component: () => import("./components/axioscom/axiosA.vue")
+          component: () => import("./components/axioscom/axiosA.vue"),
         },
         {
           path: "/axios/axiosA",
           name: "axiosA",
-          component: () => import("./components/axioscom/axiosA.vue")
+          component: () => import("./components/axioscom/axiosA.vue"),
         },
         {
           path: "/axios/axiosB",
           name: "axiosB",
-          component: () => import("./components/axioscom/axiosB.vue")
-        }
-      ]
+          component: () => import("./components/axioscom/axiosB.vue"),
+        },
+      ],
     },
     {
       path: "/amap",
       name: "amap",
-      component: () => import("./views/amap.vue")
-    }
-  ]
+      component: () => import("./views/amap.vue"),
+    },
+  ],
 });
