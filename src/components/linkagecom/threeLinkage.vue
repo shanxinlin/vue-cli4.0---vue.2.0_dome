@@ -101,25 +101,25 @@ export default {
       product: [
         {
           label: "Apple",
-          value: "0",
+          value: "11",
           children: [
             {
               label: "iPhone",
-              value: "0",
+              value: "11",
               children: [
                 {
                   label: "iPhone XS",
-                  value: "0"
+                  value: "11"
                 }
               ]
             },
             {
               label: "iPad",
-              value: "1",
+              value: "22",
               children: [
                 {
                   label: "IPad Air 无线局域网机型",
-                  value: "0"
+                  value: "11"
                 }
               ]
             }
@@ -127,25 +127,25 @@ export default {
         },
         {
           label: "Apple Beats",
-          value: "1",
+          value: "22",
           children: [
             {
               label: "Beats 耳机",
-              value: "0",
+              value: "11",
               children: [
                 {
                   label: "Beats 头戴式耳机",
-                  value: "0"
+                  value: "11"
                 }
               ]
             },
             {
               label: "Beats 音响",
-              valueL: "1",
+              value: "22",
               children: [
                 {
                   label: "Beats Pill+ 便携式蓝牙无线音箱",
-                  value: "0"
+                  value: "11"
                 }
               ]
             }
@@ -156,10 +156,17 @@ export default {
   },
   computed: {
     typeArray() {
-      return this.brand !== null ? this.product[this.brand].children : null;
+      let Numarr = this.product.filter(v => v.value == this.brand);
+      return this.brand !== null ? Numarr["0"].children : null;
     },
     nameArray() {
-      return this.type !== null ? this.typeArray[this.type].children : null;
+      let Numarr;
+      if (this.type !== null) {
+        Numarr = this.typeArray.filter(v => v.value == this.type);
+      }else{
+          return null
+      }
+      return Numarr["0"].children;
     }
     // ramArray: function() {
     //   return this.name !== null && this.nameArray.length
