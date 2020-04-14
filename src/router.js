@@ -114,5 +114,10 @@ export default new Router({
       name: "amap",
       component: () => import("./views/amap.vue"),
     },
+    {
+      path: "/linkage",
+      name: "linkage",
+      component: () => import("./views/linkage.vue")
+    }
   ],
 });

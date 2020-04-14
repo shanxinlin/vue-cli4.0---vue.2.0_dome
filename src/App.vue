@@ -22,6 +22,7 @@
             <router-link to="/Animate">Animate动画</router-link>
             <router-link to="/axios">axios接口模拟</router-link>
             <router-link to="/amap">amap地图模拟</router-link>
+            <router-link to="/linkage">层级联动</router-link>
           </div>
         </vue-scroll>
       </div>
