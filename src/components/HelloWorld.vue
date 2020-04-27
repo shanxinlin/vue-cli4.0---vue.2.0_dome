@@ -9,6 +9,11 @@
 			<el-button type="warning">警告按钮</el-button>
 			<el-button type="danger">危险按钮</el-button>
 		</el-row>
+		<div class="content">
+			<div class="center">中</div>
+			<div class="left">左</div>
+			<div class="right">右</div>
+		</div>
 	</div>
 </template>
 
@@ -39,5 +44,23 @@ li {
 }
 a {
 	color: #42b983;
+}
+.content{
+	display: flex;
+}
+.left{
+	width:200px;
+	order: 0;
+	background:aquamarine;
+}
+.center{
+	order: 1;
+	flex-grow: 1;
+	background:rgb(188, 103, 214);
+}
+.right{
+	width:100px;
+	order: 2;
+	background:rgb(9, 167, 80);
 }
 </style>

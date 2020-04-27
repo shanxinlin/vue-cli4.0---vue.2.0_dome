@@ -46,6 +46,7 @@
     "less-loader": "^5.0.0",
     "qs": "^6.9.1",
     "scss": "^0.2.4",
+    "typescript": "^3.8.3",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-cli-plugin-iview": "^1.0.6",
     "vue-template-compiler": "^2.6.10",

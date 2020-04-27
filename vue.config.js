@@ -23,7 +23,7 @@ module.exports = {
         target: "http://v.juhe.cn", //API服务器的地址
         changeOrigin: true,  //是否跨域
         pathRewrite: {
-          "^/api": ""
+          "^/api": ""   // 替换为空
         }
       }
     }
