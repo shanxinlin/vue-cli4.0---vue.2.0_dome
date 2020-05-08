@@ -1,15 +1,21 @@
 <template>
   <div class="Promise">
     <h3>Promise</h3>
+    <div>
+      <Img></Img>
+    </div>
   </div>
 </template>
 
 <script>
-// 埋点
+import Img from "@/components/promisecom/promiseImg"
 export default {
   name: "Promise",
   data() {
     return {};
+  },
+  components:{
+    Img
   },
   created() {
     // let p1 = new Promise(function(resolve) {
@@ -23,16 +29,16 @@ export default {
     for (let i = 0; i < 3; i++) {
       arrpro.push(this.fn1(i));
     }
-    Promise.all(arrpro)
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    // Promise.all(arrpro)
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   },
   mounted() {
-    this.fnAll();     // async、await 与 Promise 同步的使用方法
+    // this.fnAll();     // async、await 与 Promise 同步的使用方法
   },
   methods: {
     async fnAll() {
