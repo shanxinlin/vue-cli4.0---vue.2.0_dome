@@ -117,7 +117,12 @@ export default new Router({
     {
       path: "/linkage",
       name: "linkage",
-      component: () => import("./views/linkage.vue")
-    }
+      component: () => import("./views/linkage.vue"),
+    },
+    {
+      path: "/byVal",
+      name: "byVal",
+      component: () => import("./views/byVal.vue"),
+    },
   ],
 });

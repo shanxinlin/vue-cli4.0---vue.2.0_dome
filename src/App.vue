@@ -1,11 +1,9 @@
 <template>
   <div id="app">
-    <div class="topheader">
-      @vue/cli4.0---vue.2.0_dome
-    </div>
+    <div class="topheader">@vue/cli4.0---vue.2.0_dome</div>
     <div class="bodybox">
       <div class="routeList">
-        <vue-scroll style="height:100%">
+        <vue-scroll style="height: 100%">
           <div class="list_l">
             <router-link to="/">Home</router-link>
             <router-link to="/About">About</router-link>
@@ -23,6 +21,7 @@
             <router-link to="/axios">axios接口模拟</router-link>
             <router-link to="/amap">amap地图模拟</router-link>
             <router-link to="/linkage">层级联动</router-link>
+            <router-link to="/byVal">传值的方式</router-link>
           </div>
         </vue-scroll>
       </div>
@@ -43,7 +42,7 @@ export default {
   },
   data() {
     return {};
-  }
+  },
 };
 </script>
 
