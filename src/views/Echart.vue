@@ -3,9 +3,9 @@
 		<button @click="btnchange">改变数据</button>
 		<div>
 			<EchartsBar
-				:xAxisdata="['准备中', '技术评估', '招标/询比价', '定价', '合同', '验收', '付款', '已完成']"
-				:legendtextarr="['个数']"
-				:listscore="barListscore"
+				:xAxisdata="['年龄', '数学', '语文', '体育', '英语', '政治', '历史', '地理']"
+          			:legendtextarr="['男孩','女孩']"
+          			:listscore="[[11, 323, 23, 566, 111, 33, 223, 25],[11, 323, 23, 366, 111, 33, 223, 25]]"
 			></EchartsBar>
 		</div>
 		<div>
