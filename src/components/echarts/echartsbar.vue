@@ -289,7 +289,7 @@ export default {
 				myChart.resize();
 			});
 
-			// myChart.on('click', function (params) {  //点击事件
+			// myChart.on('click', function (params) {  //点击事件1
 			// 	console.log(params);
 			// });
 		}
