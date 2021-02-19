@@ -47,7 +47,9 @@ export default {
     //标志名
     legendtextarr: {
       type: Array,
-      default: () => []
+      default: () => {
+        return []
+      }
     },
     /**
      * @description: 对应每个标志名的数据
@@ -56,12 +58,16 @@ export default {
      */
     listscore: {
       type: Array,
-      default: () => []
+      default: () => {
+        return []
+      }
     },
     // 所有配置项，可参考echart官网配置即可  官网地址：http://xui.test.huawei.com/echarts4/echarts-doc/public/cn/option.html
     setOption: {
       type: Object,
-      default: () => {}
+      default: () => {
+        return {}
+      }
     }
   },
   data() {
@@ -256,7 +262,7 @@ export default {
 				//多组数据
         series: [] 
       };
-      var series = [];
+      let series = [];
       for (var i = 0; i < this.legendtextarr.length; i++) {
         series.push({
           name: this.legendtextarr[i],

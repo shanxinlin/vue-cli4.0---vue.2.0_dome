@@ -124,5 +124,10 @@ export default new Router({
       name: "byVal",
       component: () => import("./views/byVal.vue"),
     },
+    {
+      path: "/imgUpData",
+      name: "imgUpData",
+      component: () => import("./views/imgUpData.vue"),
+    },
   ],
 });

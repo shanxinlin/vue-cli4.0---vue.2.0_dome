@@ -22,6 +22,7 @@
             <router-link to="/amap">amap地图模拟</router-link>
             <router-link to="/linkage">层级联动</router-link>
             <router-link to="/byVal">传值的方式</router-link>
+            <router-link to="/imgUpData">几种图片上传的方式</router-link>
           </div>
         </vue-scroll>
       </div>
