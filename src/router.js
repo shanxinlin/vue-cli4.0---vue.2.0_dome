@@ -129,5 +129,10 @@ export default new Router({
       name: "imgUpData",
       component: () => import("./views/imgUpData.vue"),
     },
+    {
+      path: "/cropImg",
+      name: "cropImg",
+      component: () => import("./views/cropImg.vue"),
+    },
   ],
 });

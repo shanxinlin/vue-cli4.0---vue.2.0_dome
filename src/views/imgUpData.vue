@@ -9,6 +9,7 @@
         accept="image/png,image/gif,image/jpeg"
         @change="update"
       />
+      <img :src="fileImg" alt="">
     </div>
     <div>
       方法二base64：
@@ -30,11 +31,12 @@
 export default {
   data() {
     return {
+      fileImg: '',
       base64ImgData: "",
     };
   },
   methods: {
-    update(e) {
+    async update(e) {
       let file = e.target.files[0];
       let param = new FormData(); //创建form对象
       param.append("file", file); //通过append向form对象添加数据
@@ -42,6 +44,8 @@ export default {
       let config = {
         headers: { "Content-Type": "multipart/form-data" }, //这里是重点，需要和后台沟通好请求头，Content-Type不一定是这个值
       }; //添加请求头
+      this.fileImg = await this.FileReader(file);
+      console.log(this.fileImg)
       //   this.axios
       //     .post("http://127.0.0.1:8081/upload", param, config)
       //     .then((response) => {
