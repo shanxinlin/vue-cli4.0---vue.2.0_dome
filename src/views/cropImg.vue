@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="height:150px;">
+    <div style="height:250px;">
       <h3>之前图片裁切</h3>
       <cropimgOld></cropimgOld>
     </div>

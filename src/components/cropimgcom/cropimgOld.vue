@@ -70,11 +70,12 @@ export default {
       viewMode: 1, //如果将viewMode设置为0，裁剪框可以在画布外展开，而值为1,2或3将裁剪框限制为画布的大小
       dragMode: "move", //'crop':创建一个新的裁剪框'move':移动画布
       background: true, //是否在容器上显示网格背景
-      zoomable: true, //是否允许放大缩小图片
+      zoomable: false, //是否允许放大缩小图片
       autoCrop: true, //是否自动显示裁剪框
       autoCropArea: 0.6, //0.8(图像的80%)
-      cropBoxResizable: true, //启用通过拖动调整裁剪框的大小
+      cropBoxResizable: false, //启用通过拖动调整裁剪框的大小
       rotatable: true, //可旋转
+      zoomOnTouch: false, // 启用通过拖动触摸缩放图像
       ready: function () {
         //选择完图片后自动执行,“准备”事件的捷径
         self.croppable = true;
