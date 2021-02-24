@@ -1,7 +1,7 @@
 <!--
  * @Author: shanxinlin
  * @Date: 2021-02-24 10:12:08
- * @LastEditTime: 2021-02-24 11:23:49
+ * @LastEditTime: 2021-02-24 11:31:18
  * @LastEditors: shanxinlin
  * @Description: 
  * @FilePath: \ISALESMTP-UI\packages\portal-mtp\src\components\cropImgModule\cropImgModule.vue
@@ -29,7 +29,7 @@
 
 <script>
 // 安装：
-// "yarn add vue-cropperjs"  or  "npm install cropperjs -S"
+// "yarn add vue-cropperjs"  or  "npm i cropperjs -S"
 // 引用
 import Cropper from "cropperjs";
 export default {
