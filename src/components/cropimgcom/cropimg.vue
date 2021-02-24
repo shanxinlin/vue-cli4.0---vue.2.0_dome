@@ -1,3 +1,12 @@
+<!--
+ * @Author: shanxinlin
+ * @Date: 2021-02-24 10:12:08
+ * @LastEditTime: 2021-02-24 11:23:49
+ * @LastEditors: shanxinlin
+ * @Description: 
+ * @FilePath: \ISALESMTP-UI\packages\portal-mtp\src\components\cropImgModule\cropImgModule.vue
+ * @
+-->
 <template>
   <div class="cropContent">
     <input type="file" @change="change" />
@@ -51,7 +60,7 @@ export default {
         cropBoxResizable: false, //启用通过拖动调整裁剪框的大小
         rotatable: true, //可旋转
         zoomOnTouch: false, // 启用通过拖动触摸缩放图像
-        ready: function () {
+        ready: function() {
           // 选择完图片后自动执行,“准备”事件的捷径
           // this.cropper.move(1, -1).rotate(45).scale(1, -1);
         },
@@ -63,7 +72,7 @@ export default {
     },
     //重置
     replacement() {
-      this.cropper.reset(); 
+      this.cropper.reset();
     },
     //取消
     cancel() {
@@ -74,7 +83,7 @@ export default {
       let type = files[0].name;
       let size = files[0].size;
       //文件的类型，判断是否是图片
-      if (!/\.(jpg|jpeg|png)$/.test(type)) {
+      if (!/\.(jpg|jpeg|png)$/i.test(type)) {
         alert("图片类型必须是jpg,png中的一种");
         return false;
       }
@@ -84,7 +93,8 @@ export default {
         return false;
       }
       this.fileObj = files[0];
-      this.imgUrl = this.getObjectURL(this.fileObj); // 或者用 new FileReader() 读取文件
+      // 或者用 new FileReader() 读取文件
+      this.imgUrl = this.getObjectURL(this.fileObj);
       // 更换图像的src并重建裁剪器
       if (this.cropper) {
         this.cropper.replace(this.imgUrl, false);
@@ -131,10 +141,10 @@ export default {
     },
     //canvas画图
     getRoundedCanvas(sourceCanvas) {
-      var canvas = document.createElement("canvas");
-      var context = canvas.getContext("2d");
-      var width = sourceCanvas.width;
-      var height = sourceCanvas.height;
+      let canvas = document.createElement("canvas");
+      let context = canvas.getContext("2d");
+      let width = sourceCanvas.width;
+      let height = sourceCanvas.height;
       canvas.width = width;
       canvas.height = height;
       context.imageSmoothingEnabled = true;
@@ -148,11 +158,7 @@ export default {
     },
     // dataurl 转 Blob
     dataURLtoBlob(dataurl) {
-      let arr = dataurl.split(","),
-        mime = arr[0].match(/:(.*?);/)[1],
-        bstr = atob(arr[1]),
-        n = bstr.length,
-        u8arr = new Uint8Array(n);
+      let arr = dataurl.split(","), mime = arr[0].match(/:(.*?);/)[1], bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
       while (n--) {
         u8arr[n] = bstr.charCodeAt(n);
       }
@@ -181,7 +187,7 @@ export default {
       max-height: 400px;
       min-height: 400px;
     }
-    .btnCrop{
+    .btnCrop {
       margin: 10px;
     }
   }
@@ -280,7 +286,7 @@ export default {
   .cropper-center:after {
     position: absolute;
     display: block;
-    content: " ";
+    content: ' ';
     background-color: #eee;
   }
   .cropper-center:before {
@@ -415,7 +421,7 @@ export default {
     display: block;
     width: 200%;
     height: 200%;
-    content: " ";
+    content: ' ';
     opacity: 0;
     background-color: #39f;
   }
@@ -423,7 +429,7 @@ export default {
     opacity: 0;
   }
   .cropper-bg {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
   }
   .cropper-hide {
     position: absolute;
