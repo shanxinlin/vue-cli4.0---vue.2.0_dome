@@ -1,0 +1,31 @@
+vue3亮点：
+	Preformance（比vue2 rentime快了2倍）
+	Tree shaking（按需编译代码）
+	Ts support（更优秀的Ts支持）
+	Composition API（组合API）
+	Custom Renderer API（自定义渲染平台）
+	内置新特性组件
+
+web路径: https://www.processon.com/view/link/5e89ab04e4b0a1e6dcb47e67#map
+
+
+vue3.0安装：
+	方法一： 
+		1: npm install -g create-vite-app
+		2: create-vite-app projectName
+	方法二：git clone https://github.com/vuejs/vue-next-webpack-preview
+	方法三：
+		1: npm i -g @vue/cli
+		2: vue create projectName  ||  vue init webpack  projectName  
+		3: cd projectName
+		4: vue add vue-next(升级vue2.0)
+
+vue生命周期：
+	beforeCreate( 创建前 ): el 和 data 并未初始化
+	created ( 创建后 ）:完成了data 数据的初始化，el没有
+	beforeMount: 虚拟DOM
+	mounted: DOM挂在完成
+	beforeUpdate：
+	updated：
+	beforeDestroy：
+	destroyed：
