@@ -25,6 +25,18 @@ export default {
       this.value = val;
     },
   },
+  beforeCreate() {
+    console.log("子：beforeCreate");
+  },
+  created() {
+    console.log("子：created");
+  },
+  beforeMount() {
+    console.log("子：beforeMount");
+  },
+  mounted() {
+    console.log("子：mounted");
+  },
   methods: {
     namClick() {
       this.num += 2;

@@ -21,6 +21,18 @@ export default {
       Name: 1,
     };
   },
+  beforeCreate() {
+    console.log("父：beforeCreate");
+  },
+  created() {
+    console.log("父：created");
+  },
+  beforeMount() {
+    console.log("父：beforeMount");
+  },
+  mounted() {
+    console.log("父：mounted");
+  },
   methods: {
     namFn() {},
   },
