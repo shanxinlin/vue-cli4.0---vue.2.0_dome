@@ -454,3 +454,64 @@ export default {
   }
 }
 </style>
+
+<!--
+配置属性：
+// aspectRatio: 16 / 9,//裁剪框的宽高比
+// viewMode: 1,//定义cropper的视图模式
+// dragMode: "move",//定义cropper的拖拽模式‘crop’: 可以产生一个新的裁剪框 ‘move’: 只可以移动裁剪框 ‘none’: 什么也不处理
+// preview: ".yulan",//添加额外的元素(容器)以供预览
+// modal: true,//显示图片上方的黑色遮盖层
+// guides: false,//显示在裁剪框上方的虚线
+// background: false,//显示容器的网格背景。（就是后面的马赛克）
+// autoCrop: true, //是否自动显示裁剪框 默认：true
+// autoCropArea: "0.6",//定义自动裁剪面积大小和图片进行对比 默认：0.8；
+// movable: true,//是否允许可以移动后面的图片 默认：true
+// rotatable: true,//是否允许旋转图像 默认：true
+// scalable: true,//是否允许缩放图像 默认：true
+// zoomable: true,//是否允许放大图像 默认：true
+// zoomOnTouch: true,//是否可以通过拖动触摸来放大图像 默认：true
+// zoomOnWheel: true,//是否可以通过移动鼠标来放大图像 默认：true
+// wheelZoomRatio: "0.1",//用鼠标移动图像时，定义缩放比例
+// cropBoxMovable: false,//是否通过拖拽来移动剪裁框 默认：true 
+// cropBoxResizable: false,//是否通过拖动来调整剪裁框的大小 默认：true
+// toggleDragModeOnDblclick: true,//当点击两次时可以在“crop”和“move”之间切换拖拽模式 默认：true
+// responsive: true,//在调整窗口大小的时候重新渲染cropper 默认：true
+// restore: true,//在调整窗口大小后恢复裁剪的区域 默认：true
+// minContainerWidth: "200",//容器的最小宽度 默认：200；
+// minContainerHeight: "100",//容器的最小高度 默认：100；
+// minCanvasWidth: "0",//canvas的最小宽度 默认：0
+// minCanvasHeight: "0",//canvas的最小高度 默认：0
+// minCropBoxWidth: "0",//裁剪层的最小宽度 默认：0
+// minCropBoxHeight: "0",//裁剪层的最小高度 默认：0
+
+方法集合：
+crop() 手动显示裁剪框
+reset()—-将图像和裁剪框重置为初始状态
+clear()—清除裁切框
+replace(url)—替换图像的src并重新构建cropper
+enable()—解锁，锁定的裁切框（与disable相对应）
+disable()—锁定的裁切框（裁切框不可移动）（与enable相对应）
+destroy()—销毁cropper并从图像中删除整个cropper。
+move(offsetX[, offsetY])—使用相对偏移量移动图像(裁切框不移动)。
+moveTo(x[, y])—-将画布(图像包装器)移动到一个绝对点
+zoom(ratio)—放大图片，并使用相对比例。（裁切框不变化）
+zoomTo(ratio)—-将画布(图像包装器)放大到一个绝对比例
+rotate(degree)—旋转图像以一定的角度
+rotateTo(degree)—旋转图像到固定的角度
+scale(scaleX[, scaleY])—-翻转图像
+scaleX(scaleX)—-缩放图像的横坐标
+scaleY(scaleY)—-缩放图像的纵坐标
+getData([rounded])—-输出最终裁剪的区域位置和大小数据(根据原始图像的自然大小）
+setData(data)—用新数据改变裁切区域的位置和大小(以原始图像为基础)
+getContainerData()—输出container 容器大小数据
+getImageData()—-输出图像image位置、大小和其他相关数据
+getCanvasData()—输出画布Canvas(图像包装器)位置和大小数据
+setCanvasData(data)—：使用数据更改画布Canvas(图像包装器)位置和大小
+getCropBoxData()—输出剪切框的位置和大小数据
+setCropBoxData(data)—–改变剪切框的位置和大小数据
+getCroppedCanvas([options])—画一张剪裁的图片。如果没有剪裁，则返回一个绘制整个画布
+setAspectRatio(aspectRatio)—改变裁切框的宽高比
+setDragMode([mode])—-设置拖拽模式（就是鼠标显示的是十字还是那种带箭头的十字
+
+-->
