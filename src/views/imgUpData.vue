@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      方法一：
+      方法一：文件对象
       <input
         class="file"
         name="file"
@@ -44,8 +44,6 @@ export default {
       let config = {
         headers: { "Content-Type": "multipart/form-data" }, //这里是重点，需要和后台沟通好请求头，Content-Type不一定是这个值
       }; //添加请求头
-      this.fileImg = await this.FileReader(file);
-      console.log(this.fileImg)
       //   this.axios
       //     .post("http://127.0.0.1:8081/upload", param, config)
       //     .then((response) => {
