@@ -1,10 +1,10 @@
 <!--
  * @Author: shanxinlin
  * @Date: 2021-02-24 10:12:08
- * @LastEditTime: 2021-02-24 11:31:18
+ * @LastEditTime: 2021-03-12 17:08:47
  * @LastEditors: shanxinlin
  * @Description: 
- * @FilePath: \ISALESMTP-UI\packages\portal-mtp\src\components\cropImgModule\cropImgModule.vue
+ * @FilePath: \vue-cli4.0---vue.2.0_dome\src\components\cropimgcom\cropimg.vue
  * @
 -->
 <template>
@@ -122,21 +122,21 @@ export default {
       // 裁切
       croppedCanvas = this.cropper.getCroppedCanvas();
       // 截取
-      roundedCanvas = this.getRoundedCanvas(croppedCanvas);
+      // roundedCanvas = this.getRoundedCanvas(croppedCanvas);
       // 转换成base64
-      let headerImage = roundedCanvas.toDataURL();
+      let headerImage = croppedCanvas.toDataURL();
       // base64 转 blob
       _BLOB = this.dataURLtoBlob(headerImage);
-      // 裁切后的file对象
-      _FILES = new window.File([_BLOB], this.fileObj.name, {
-        type: this.fileObj.type,
-      });
+      // 裁切后的file对象 (new window.File 此方法IE不支持)
+      // _FILES = new window.File([_BLOB], this.fileObj.name, {
+      //   type: this.fileObj.type,
+      // });
       // 转换成本地blob的image路径
-      headerImage = URL.createObjectURL(_FILES);
+      let blobImage = this.getObjectURL(_BLOB.file);
       //上传图片
       let formData = new FormData();
-      formData.append("imageFile", _FILES);
-      console.log(formData, headerImage)
+      formData.append("file", _BLOB.file, _BLOB.name);
+      console.log(formData, _BLOB)
       // axios请求
     },
     //canvas画图
@@ -157,12 +157,22 @@ export default {
       return canvas;
     },
     // dataurl 转 Blob
-    dataURLtoBlob(dataurl) {
-      let arr = dataurl.split(","), mime = arr[0].match(/:(.*?);/)[1], bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    dataURLtoBlob(dataurl, filename = 'file') {
+      let arr = dataurl.split(",");
+      let mime = arr[0].match(/:(.*?);/)[1];
+      let bstr = atob(arr[1]), n = bstr.length;
+      let u8arr = new Uint8Array(n);
+      let suffix = mime.split('/')[1];
       while (n--) {
         u8arr[n] = bstr.charCodeAt(n);
       }
-      return new Blob([u8arr], { type: mime });
+      let theBlob = new Blob([u8arr], { type: mime });
+      theBlob.lastModifiedDate = new Date();
+      theBlob.name = `${filename}.${suffix}`
+      return {
+        file: theBlob,
+        name: `${filename}.${suffix}`
+      }
     }
   },
 };
