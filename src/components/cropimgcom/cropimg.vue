@@ -1,12 +1,3 @@
-<!--
- * @Author: shanxinlin
- * @Date: 2021-02-24 10:12:08
- * @LastEditTime: 2021-03-12 17:08:47
- * @LastEditors: shanxinlin
- * @Description: 
- * @FilePath: \vue-cli4.0---vue.2.0_dome\src\components\cropimgcom\cropimg.vue
- * @
--->
 <template>
   <div class="cropContent">
     <input type="file" @change="change" />
