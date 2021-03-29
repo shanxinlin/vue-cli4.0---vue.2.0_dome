@@ -11,9 +11,8 @@ export default {
   //     prop: "value",
   //     event: "changeb",
   //   },
-  props: {
-    value: "",
-  },
+  props: ['value'],
+  inject: ['kuaji'],
   data() {
     return {
       num: 1,
@@ -25,17 +24,9 @@ export default {
       this.value = val;
     },
   },
-  beforeCreate() {
-    console.log("子：beforeCreate");
-  },
-  created() {
-    console.log("子：created");
-  },
-  beforeMount() {
-    console.log("子：beforeMount");
-  },
   mounted() {
-    console.log("子：mounted");
+    console.log('跨级通信：', this.kuaji)
+    console.log('获取父级数据', this.$parent);
   },
   methods: {
     namClick() {
