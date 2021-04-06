@@ -11,7 +11,8 @@ import createPersistedState from "vuex-persistedstate";
 export default new Vuex.Store({
   //非模块写法
   state: {
-    self: false
+    self: false,
+    token: 'sxl'
   },
   mutations: {
     selfFn(state, n) {
