@@ -2,33 +2,31 @@
   <div class="Promise">
     <h3>Promise</h3>
     <div>
-      <Img></Img>
+      Promise.race: <promiseImg/>
+    </div>
+    <div>
+      Promise手写: <promiseText/>
     </div>
   </div>
 </template>
 
 <script>
-import Img from "@/components/promisecom/promiseImg"
+import promiseImg from "@/components/promisecom/promiseImg"
+import promiseText from "@/components/promisecom/promiseText"
 export default {
   name: "Promise",
   data() {
     return {};
   },
   components:{
-    Img
+    promiseImg,
+    promiseText
   },
   created() {
-    // let p1 = new Promise(function(resolve) {
-    //   setTimeout(function() {
-    //     console.log("1");
-    //     resolve("p1");
-    //   }, 2000);
-    // });
-    // let p3 = Promise.reject("失败!");
-    let arrpro = [];
-    for (let i = 0; i < 3; i++) {
-      arrpro.push(this.fn1(i));
-    }
+    // let arrpro = [];
+    // for (let i = 0; i < 3; i++) {
+    //   arrpro.push(this.fn1(i));
+    // }
     // Promise.all(arrpro)
     //   .then(result => {
     //     console.log(result);
@@ -47,7 +45,7 @@ export default {
       let fn2 = await this.fn2(10);
       setTimeout(function() {
         console.log(fn0, fn1, fn2, "all");
-      }, 100);
+      }, 1000);
     },
     fn0() {
       return new Promise(() => {
