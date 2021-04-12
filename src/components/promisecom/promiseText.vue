@@ -13,12 +13,13 @@ export default {
   mounted() {
     let FN = new Promise(resolve => {
       setTimeout(function() {
-        console.log('2:   ')
+        console.log('3:   ')
         resolve(2);
       }, 1000);
     });
+    console.log('1:  ', FN)
     FN.then((res) => {
-      console.log('4:   ', res)
+      console.log('5:   ', res)
     })
 
     function Promise(fn) {
@@ -26,20 +27,18 @@ export default {
       var value = null,
         callbacks = [];  //callbacks为数组，因为可能同时有很多个回调
       this.then = function(onFulfilled) {
-        console.log('1:   ', onFulfilled)
+        console.log('2:   ', onFulfilled)
         callbacks.push(onFulfilled);
       };
       function resolve(value) {
-        console.log('3:   ', value)
+        console.log('4:   ', value)
         callbacks.forEach(function(callback) {
           callback(value);
         });
-        console.log('5:', value)
+        console.log('6:', value)
       }
-      setTimeout(function() {
-        console.log('2:   ')
-        resolve(2);
-      }, 1000);
+      fn(resolve)
+      console.log('0.5:  ')
     }
   },
   methods: {
