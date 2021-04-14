@@ -1,12 +1,18 @@
 <template>
   <div>
-    <h3>传值的方式</h3>
+    <h3>1.传值的方式</h3>
     <br />
     <div>{{ Name }}</div>
     <Acom v-model="Name"></Acom>
     <button @click="fangdou()">防抖</button>
     <button @click="fangdou2()">防抖</button>
     <button @click="jieliu()">节流</button>
+    <br>
+    <br>
+    <br>
+    <h3>2.传值的的变化</h3>
+    <div v-for="(item,index) in valArr" :key="index">{{item.age}}</div>
+    <children :valArr.sync='valArr'></children>
   </div>
 </template>
 
@@ -15,7 +21,8 @@ import Acom from '@/components/byValcom/A.vue'
 export default {
   name: "byVal",
   components: {
-    Acom
+    Acom,
+    children: () => import('@/components/byValcom/children')
   },
   provide: {
     kuaji: 'demo'
@@ -26,10 +33,15 @@ export default {
       time: null,
       timmer: null,
       JLTime: false,
-      last: 0
+      last: 0,
+      valArr: [
+        { name: '1', age: 18 },
+        { name: '2', age: 19 },
+        { name: '3', age: 20 }
+      ]
     };
   },
-  mounted(){
+  mounted() {
     console.log('获取子组件数据', this.$children)
   },
   methods: {
