@@ -152,5 +152,37 @@ export default {
         i++;
       }, 5);
     };
+
+    /**
+     * @description: 定义一个深拷贝函数
+     * @param {any} target
+     * @return {any}
+     */
+    Vue.prototype.comDeepClone = (target) => {
+      function deepcloenFn(target) {
+        let result
+        if (typeof target === 'object') {
+          if (Array.isArray(target)) {
+            result = []
+            for (const i in target) {
+              result.push(deepcloenFn(target[i]))
+            }
+          } else if (target === null) {
+            result = null
+          } else if (target.constructor === RegExp) {
+            result = target
+          } else {
+            result = {}
+            for (const i in target) {
+              result[i] = deepcloenFn(target[i])
+            }
+          }
+        } else {
+          result = target
+        }
+        return result
+      }
+      return deepcloenFn(target)
+    }
   }
 };
