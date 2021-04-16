@@ -134,5 +134,10 @@ export default new Router({
       name: "cropImg",
       component: () => import("./views/cropImg.vue"),
     },
+    {
+      path: "/render",
+      name: "render",
+      component: () => import("./views/render.vue"),
+    },
   ],
 });
