@@ -1,6 +1,6 @@
 
 <script>
-import renderText from '@/components/renderText.vue'
+import renderText from '@/components/rendercom/renderText.vue'
 export default {
   render(createElement) {
     return createElement(renderText, {

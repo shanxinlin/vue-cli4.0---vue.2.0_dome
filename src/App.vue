@@ -13,7 +13,6 @@
             <router-link to="/video">video</router-link>
             <router-link to="/quillEditor">富文本</router-link>
             <router-link to="/upFile">upFile</router-link>
-            <router-link to="/MaiTrack">MaiTrack埋点</router-link>
             <router-link to="/Promise">Promise同步异步</router-link>
             <router-link to="/share">分享</router-link>
             <router-link to="/regExp">RegExp正则</router-link>

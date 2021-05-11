@@ -63,11 +63,6 @@ export default new Router({
       component: () => import("./views/upFile.vue"),
     },
     {
-      path: "/MaiTrack",
-      name: "MaiTrack",
-      component: () => import("./views/MaiTrack.vue"),
-    },
-    {
       path: "/Promise",
       name: "Promise",
       component: () => import("./views/Promise.vue"),

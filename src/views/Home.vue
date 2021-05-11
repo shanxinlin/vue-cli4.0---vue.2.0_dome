@@ -4,6 +4,9 @@
       <el-button type="text" @click="open">点击打开 Message Box</el-button>
     </template>
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div v-loading="loading">
+      <div>loadingasdasdfasdfasdfadsf</div>
+    </div>
   </div>
 </template>
 
@@ -18,10 +21,15 @@ export default {
   data() {
     return {
       lookTimeStart: "",
-      lookTimeEnd: ""
+      lookTimeEnd: "",
+      loading: false
     };
   },
-  mounted() {},
+  mounted() {
+    setTimeout(() => {
+      this.loading = true
+    }, 3000)
+  },
   methods: {
     // 埋点
     mradius() {

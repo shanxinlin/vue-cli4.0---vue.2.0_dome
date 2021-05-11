@@ -6,8 +6,8 @@
   </div>
 </template>
 <script>
-import renderAcom from '@/components/renderAcom.vue'
-import renderBcom from '@/components/renderBcom.vue'
+import renderAcom from '@/components/rendercom/renderAcom.vue'
+import renderBcom from '@/components/rendercom/renderBcom.vue'
 export default {
   components: {
     renderAcom,

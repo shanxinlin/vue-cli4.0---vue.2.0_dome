@@ -1,3 +1,5 @@
+import Loading from './common/loading/loading.js'
+
 //vue 扩展方法
 export default {
   install(Vue) {
@@ -183,6 +185,7 @@ export default {
         return result
       }
       return deepcloenFn(target)
-    }
+    };
+    Vue.directive('loading', Loading)
   }
 };
