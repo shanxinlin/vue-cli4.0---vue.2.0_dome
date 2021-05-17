@@ -26,9 +26,10 @@ export default {
     };
   },
   mounted() {
+    this.loading = true
     setTimeout(() => {
-      this.loading = true
-    }, 3000)
+      this.loading = false
+    })
   },
   methods: {
     // 埋点

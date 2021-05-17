@@ -1,12 +1,3 @@
-<!--
- * @Author: shanxinlin
- * @Date: 2021-02-05 11:52:44
- * @LastEditTime: 2021-02-07 18:01:14
- * @LastEditors: shanxinlin
- * @Description: 
- * @FilePath: \ISALESCMMUI\packages\portal-cmm\src\components\componentsDemo\echartModule\echartBarModule.vue
- * @
--->
 <template>
   <div id="wrap">
     <div ref="echarts" :style="{'height': height, 'width': width}"></div>
@@ -17,6 +8,7 @@
 
 <script>
 import echarts from 'echarts';
+// import imgUrl from '@/assets/images/data.jpg'
 export default {
   props: {
     // echart 高度
@@ -27,7 +19,7 @@ export default {
     // echart 宽度
     width: {
       type: String,
-      default: '800px'
+      default: 'auto'
     },
     //x轴标题名
     xAxisdata: {
@@ -38,12 +30,12 @@ export default {
     ytitle: {
       type: String,
       default: 'Y轴'
-		},
-		//纵坐标标题
+    },
+    //纵坐标标题
     xtitle: {
       type: String,
       default: 'X轴'
-		},
+    },
     //标志名
     legendtextarr: {
       type: Array,
@@ -53,7 +45,7 @@ export default {
     },
     /**
      * @description: 对应每个标志名的数据
-		 * @example:'[[11, 33, 23, 56, 11, 33, 23, 56],[11, 33, 23, 56, 11, 33, 23, 56]]'
+     * @example:'[[11, 33, 23, 56, 11, 33, 23, 56],[11, 33, 23, 56, 11, 33, 23, 56]]'
      * @param {*} Array<(Array<Number | String>)>
      */
     listscore: {
@@ -71,7 +63,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      imgUrl: require("@/assets/images/data.jpg")
+    };
   },
   mounted() {
     this.$nextTick(() => {
@@ -125,20 +119,31 @@ export default {
         //hover提示设置
         tooltip: {
           show: true, //是否显示hover提示
+          position: function(point, params, dom, rect, size) {  // 提示固定位置
+            return [point[0], '10%'];
+          },
+          enterable: true, // 鼠标可以移入到提示框内
+          confine: true,
           trigger: 'axis',
-          triggerOn: 'click',
+          // triggerOn: 'click',  // mousemove  | click
           axisPointer: {
             // 坐标轴指示器，坐标轴触发有效
-            type: 'line' // 默认为直线，可选为：'line' | 'shadow'
+            type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+            // shadowStyle: {
+            //   color: {
+            //     image: that.imageDom(), // 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串
+            //     repeat: 'no-repeat' // 是否平铺，可以是 'repeat-x', 'repeat-y', 'no-repeat'
+            //   }
+            // }
           },
           formatter(params) {
             //重写hover提示
-            // console.log(params[0])
-            that.$emit('barclick', params[0]);
-            var htmlStr = '<div style="z-index:20">';
+            // console.log(params[0].dataIndex)
+            // that.$emit('barclick', params[0]);
+            let htmlStr = '<div style="z-index:20">';
             htmlStr += params[0].name + '<br/>'; //x轴的名称
-            for (var i = 0; i < params.length; i++) {
-              var color = params[i].color; //图例颜色
+            for (let i = 0; i < params.length; i++) {
+              let color = params[i].color; //图例颜色
               //为了保证和原来的效果一样，这里实现了一个点的效果
               htmlStr += '<span style="margin-right:5px;display:inline-block;width:10px;height:10px;border-radius:5px;background-color:' + color + ';"></span>';
               //添加一个汉字，这里你可以格式你的数字或者自定义文本内容
@@ -157,9 +162,9 @@ export default {
             return htmlStr;
           },
           ...this.setOption.tooltip
-				},
-				//柱形图块的颜色(多个柱形图可多个添加)
-        color: ['#1890ff', '#F83656', '#8470FF', '#FFB55D'], 
+        },
+        //柱形图块的颜色(多个柱形图可多个添加)
+        color: ['#1890ff', '#F83656', '#8470FF', '#FFB55D'],
         //x轴滚动条设置
         dataZoom: [
           {
@@ -177,12 +182,12 @@ export default {
             },
             startValue: 0, // 数据窗口范围的起始数值
             endValue: 3,  // 数据窗口范围的结束数值
-						height: 8,   // 滚动条高度
-						bottom: 0,
+            height: 8,   // 滚动条高度
+            bottom: 0,
             ...this.setOption.dataZoom
           }
         ],
-				//图形位置设置
+        //图形位置设置
         grid: {
           top: '50', //距上边距
           left: '50', //距离左边距
@@ -190,10 +195,10 @@ export default {
           bottom: '50', //距离下边距
           ...this.setOption.grid
         },
-				//X轴设置
+        //X轴设置
         xAxis: {
-					show: true,
-					name: this.xtitle || '',
+          show: true,
+          name: this.xtitle || '',
           axisTick: { show: true },
           type: 'category',
           splitLine: { show: false }, //去除网格线
@@ -215,7 +220,7 @@ export default {
           },
           ...this.setOption.xAxis
         },
-				//Y轴设置
+        //Y轴设置
         yAxis: {
           type: 'value',
           name: this.ytitle,
@@ -235,8 +240,8 @@ export default {
             show: true,
             lineStyle: {
               color: '#999',
-							width: 1
-						}
+              width: 1
+            }
           },
           axisLabel: {
             interval: 'auto', //间隔显示
@@ -258,9 +263,9 @@ export default {
             }
           },
           ...this.setOption.yAxis
-				},
-				//多组数据
-        series: [] 
+        },
+        //多组数据
+        series: []
       };
       let series = [];
       for (var i = 0; i < this.legendtextarr.length; i++) {
@@ -298,9 +303,26 @@ export default {
         myChart.resize();
       });
 
-      // myChart.on('click', function (params) {  //点击事件
-      // 	console.log(params);
-      // });
+      myChart.on('click', function(params) {  //点击事件
+        console.log(params);
+      });
+    },
+    imageDom() {
+      let img1 = new Image(); // Image 构造器
+      img1.src = this.imgUrl;
+      img1.alt = 'alt';
+      img1.style.position = 'absolute';
+      img1.style.zIndex = 1000;
+      img1.onclick = function() {
+        console.log('点击图片')
+      }
+      document.body.appendChild(img1);
+
+      let img2 = document.createElement('img'); // 使用 DOM HTMLImageElement
+      img2.src = this.imgUrl;
+      img2.alt = 'alt text';
+      // document.body.appendChild(img2);
+      return img1
     }
   }
 };
