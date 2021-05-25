@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Loading from './loading.vue'
 
-const LoadMoudle = Vue.extend(Loading)
+const LoadMoudle = Vue.extend(Loading)  // 创建构造器
 
 const toggleLoading = (el, binding) => {
   if (binding.value) {
@@ -22,13 +22,13 @@ const insertDom = (parent, el) => {
 
 export default {
   bind: function(el, binding) {  // 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
-    const instance = new LoadMoudle({
+    const instance = new LoadMoudle({  // 创建 instance 实例
       el: document.createElement('div'),
       data() { }
     })
     console.log(el, instance)
     el.instance = instance
-    el.html = instance.$el
+    el.html = instance.$el 
     el.loadStyle = {}
     console.log(el)
     binding.value && toggleLoading(el, binding)
