@@ -128,11 +128,9 @@ export default {
           // triggerOn: 'click',  // mousemove  | click
           axisPointer: {
             // 坐标轴指示器，坐标轴触发有效
-            type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+            type: 'line', // 默认为直线，可选为：'line' | 'shadow'
             // shadowStyle: {
             //   color: {
-            //     image: that.imageDom(), // 支持为 HTMLImageElement, HTMLCanvasElement，不支持路径字符串
-            //     repeat: 'no-repeat' // 是否平铺，可以是 'repeat-x', 'repeat-y', 'no-repeat'
             //   }
             // }
           },
@@ -271,7 +269,8 @@ export default {
       for (var i = 0; i < this.legendtextarr.length; i++) {
         series.push({
           name: this.legendtextarr[i],
-          type: 'bar',
+          type: 'line',
+          symbolSize: 12,
           data: this.listscore[i] || [],
           smooth: true,
           itemStyle: {
@@ -306,23 +305,6 @@ export default {
       myChart.on('click', function(params) {  //点击事件
         console.log(params);
       });
-    },
-    imageDom() {
-      let img1 = new Image(); // Image 构造器
-      img1.src = this.imgUrl;
-      img1.alt = 'alt';
-      img1.style.position = 'absolute';
-      img1.style.zIndex = 1000;
-      img1.onclick = function() {
-        console.log('点击图片')
-      }
-      document.body.appendChild(img1);
-
-      let img2 = document.createElement('img'); // 使用 DOM HTMLImageElement
-      img2.src = this.imgUrl;
-      img2.alt = 'alt text';
-      // document.body.appendChild(img2);
-      return img1
     }
   }
 };

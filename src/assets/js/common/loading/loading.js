@@ -22,15 +22,10 @@ const insertDom = (parent, el) => {
 
 export default {
   bind: function(el, binding) {  // 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
-    const instance = new LoadMoudle({  // 创建 instance 实例
-      el: document.createElement('div'),
-      data() { }
-    })
-    console.log(el, instance)
+    const instance = new LoadMoudle().$mount()  // 创建 instance 实例
     el.instance = instance
     el.html = instance.$el 
     el.loadStyle = {}
-    console.log(el)
     binding.value && toggleLoading(el, binding)
   },
   update: function(el, binding) {
