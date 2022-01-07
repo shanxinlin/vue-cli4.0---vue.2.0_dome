@@ -4,6 +4,7 @@ import router from './router'
 import store from './store/index'
 import axiosApi from "@/request/http.js" //注册全局api事件
 import vuePlugin from "@/assets/js/vuePlugin.js" //全局公用方法
+import 'lib-flexible/flexible' // html设置font-size
 import './plugins/element.js'  //饿了么框架
 import './plugins/iview.js'    //iview框架
 import './plugins/swiper.js'   //swiper插件
@@ -31,13 +32,38 @@ new Vue({
 
 
 router.beforeEach((to, from, next) => {
-  if(to.meta.requireAuth){
-    if( store.state.token ){
+  if (to.meta.requireAuth) {
+    if (store.state.token) {
       next()
-    }else {
+    } else {
       next('/login')
     }
-  }else {
+  } else {
     next()
   }
 })
+
+  // ; (function(win) {
+  //   var tid;
+  //   function refreshRem() {
+  //     let designSize = 1920; // 设计图尺寸
+  //     let html = document.documentElement;
+  //     let wW = html.clientWidth;// 窗口宽度
+  //     let rem = wW * 100 / designSize;
+  //     document.documentElement.style.fontSize = rem + 'px';
+  //   }
+  //   win.addEventListener('resize', function() {
+  //     clearTimeout(tid);
+  //     tid = setTimeout(refreshRem, 300);
+  //   }, false);
+  //   win.addEventListener('pageshow', function(e) {
+  //     if (e.persisted) {
+  //       clearTimeout(tid);
+  //       tid = setTimeout(refreshRem, 300);
+  //     }
+  //   }, false);
+
+  //   refreshRem();
+
+  // })(window);
+

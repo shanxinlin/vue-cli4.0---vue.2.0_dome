@@ -47,6 +47,7 @@ a {
 }
 .content{
 	display: flex;
+	font-size: 16px;
 }
 .left{
 	width:200px;

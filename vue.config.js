@@ -33,6 +33,26 @@ module.exports = {
     externals: {
       'AMap': 'AMap' // 高德地图配置
     }
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          require('postcss-plugin-px2rem')({
+            rootValue: 100, // (数字\对象)根元素字体大小。默认为100。如果rootValue是一个对象，例如{ px: 50, rpx: 100 }，它将取代RPX至1/100雷姆，将PX改为1/50雷姆。
+            unitPrecision: 5, // (数字)十进制数，允许REM单元增长到。
+            propWhiteList: [], // (数组)可以从px更改为rem的属性。
+            propBlackList: [], // (数组)不应从px更改为rem的属性。 值必须是完全匹配的。
+            exclude: false, // (Reg)排除某些文件夹的一种方法，如。/(节点_模块)/。
+            selectorBlackList: [], // (数组)要忽略并以PX形式离开的选择器。
+            ignoreIdentifier: false,
+            replace: true,
+            mediaQuery: false, // (布尔值)允许在媒体查询中转换PX。
+            minPixelValue: 0 // (数字)设置要替换的最小像素值。
+          })
+        ]
+      }
+    }
   }
 };
 

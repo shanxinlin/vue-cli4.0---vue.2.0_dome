@@ -26,6 +26,32 @@ export default {
     };
   },
   mounted() {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false
+    })
+
+    // es6
+    class obj {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+      toString() {
+        return this.x + this.y
+      }
+    };
+    class Point extends obj {
+      constructor(x, y, z) {
+        super(x, y);
+        this.z = z
+      }
+      toString() {
+        return super.toString() + this.z
+      }
+    }
+
+    let Obj = new Point(1, 2, 3)
   },
   methods: {
 
