@@ -45,6 +45,9 @@ export default {
   data() {
     return {};
   },
+  created(){
+    console.log('222222')
+  }
 };
 </script>
 
