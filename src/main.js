@@ -26,6 +26,10 @@ Vue.use(vuePlugin)
 
 Vue.config.productionTip = false
 
+// vue2 用vue3的写法
+import VueCompositionAPI from '@vue/composition-api'
+Vue.use(VueCompositionAPI)
+
 new Vue({
     router,
     store,

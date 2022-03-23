@@ -134,5 +134,10 @@ export default new Router({
       name: "render",
       component: () => import("./views/render.vue"),
     },
+    {
+      path: "/dragstart",
+      name: "dragstart",
+      component: () => import("./views/dragstart.vue"),
+    },
   ],
 });

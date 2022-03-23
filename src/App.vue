@@ -24,6 +24,7 @@
             <router-link to="/imgUpData">几种图片上传的方式</router-link>
             <router-link to="/cropImg">图片上传裁切</router-link>
             <router-link to="/render">render函数</router-link>
+            <router-link to="/dragstart">拖拽演示</router-link>
           </div>
         </vue-scroll>
       </div>
@@ -46,7 +47,6 @@ export default {
     return {};
   },
   created(){
-    console.log('222222')
   }
 };
 </script>
