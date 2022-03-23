@@ -23,6 +23,8 @@
 
   方法三：
   <a href="https://github.com/hilongjw/vue-dragging">awe-dnd</a>
+  方法四(推荐)：
+  <a href="https://www.itxst.com/vue-draggable/tutorial.html">vue.draggable</a>
  </div>
 </template>
 
