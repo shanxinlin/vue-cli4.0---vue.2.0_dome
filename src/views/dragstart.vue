@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div style="padding:40px;">
   <transition-group class="container" name="sort">
    <div
     class="app-item"
@@ -22,16 +22,21 @@
   <dragcom1></dragcom1>
 
   方法三：
-  <a href="https://github.com/hilongjw/vue-dragging">awe-dnd</a>
+  <a href="https://github.com/hilongjw/vue-dragging">https://github.com/hilongjw/vue-dragging</a>
+  <br>
+  <br>
+  <br>
   方法四(推荐)：
-  <a href="https://www.itxst.com/vue-draggable/tutorial.html">vue.draggable</a>
+  <a href="https://www.itxst.com/vue-draggable/tutorial.html">https://www.itxst.com/vue-draggable/tutorial.html</a>
+  <dragcom2></dragcom2>
  </div>
 </template>
 
 <script>
 export default {
  components:{
-   dragcom1: () => import('@/components/dragcom/dragcom1.vue')
+   dragcom1: () => import('@/components/dragcom/dragcom1.vue'),
+   dragcom2: () => import('@/components/dragcom/dragcom2.vue')
  },
  data() {
   return {

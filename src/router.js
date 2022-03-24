@@ -139,5 +139,10 @@ export default new Router({
       name: "dragstart",
       component: () => import("./views/dragstart.vue"),
     },
+    {
+      path: "/vue3Setup",
+      name: "vue3Setup",
+      component: () => import("./views/vue3Setup.vue"),
+    },
   ],
 });

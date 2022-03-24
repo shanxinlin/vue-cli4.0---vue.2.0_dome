@@ -25,6 +25,7 @@
             <router-link to="/cropImg">图片上传裁切</router-link>
             <router-link to="/render">render函数</router-link>
             <router-link to="/dragstart">拖拽演示</router-link>
+            <router-link to="/vue3Setup">vue3Setup</router-link>
           </div>
         </vue-scroll>
       </div>
